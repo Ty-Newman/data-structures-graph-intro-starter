@@ -11,14 +11,14 @@ class Graph {
   }
 
   addEdges(srcValue, destValue) {
-      if(!this.adjList[srcValue]){
-        this.adjList[srcValue] = [];
-      }
-      if(!this.adjList[destValue]){
-        this.adjList[destValue] = [];
-      }
-        this.adjList[srcValue].push(destValue);
-        this.adjList[destValue].push(srcValue);
+    if(!this.adjList[srcValue]){
+      this.adjList[srcValue] = [];
+    }
+    if(!this.adjList[destValue]){
+      this.adjList[destValue] = [];
+    }
+    this.adjList[srcValue].push(destValue);
+    this.adjList[destValue].push(srcValue);
   }
 
   buildGraph(edges) {
