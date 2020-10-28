@@ -1,15 +1,24 @@
 
 class Graph {
   constructor() {
-    // Code goes here ...
+    this.adjList = {};
   }
 
   addVertex(vertex) {
-    // Code goes here ...
+    if(!this.adjList[vertex]){
+      this.adjList[vertex] = [];
+    }
   }
 
   addEdges(srcValue, destValue) {
-    // Code goes here ...
+      if(!this.adjList[srcValue]){
+        this.adjList[srcValue] = [];
+      }
+      if(!this.adjList[destValue]){
+        this.adjList[destValue] = [];
+      }
+        this.adjList[srcValue].push(destValue);
+        this.adjList[destValue].push(srcValue);
   }
 
   buildGraph(edges) {
@@ -30,15 +39,10 @@ class Graph {
 
 }
 
+let test = new Graph();
+// test.addVertex('a')
+console.log("test.addVertex('a')", test.addVertex('a'), test);
+
 module.exports = {
   Graph
 };
-
-
-
-
-
-
-
-
-
